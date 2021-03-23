@@ -1,0 +1,2 @@
+$("#tagid").attr("href","new value"); //--- Using jQuery
+document.getElementById("tagId").href="new href";//-- Java Script
