@@ -1,0 +1,1 @@
+ $('#cboExpenseType').select2("val", "0"); 
