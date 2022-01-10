@@ -1,0 +1,12 @@
+ function Sum()
+        {
+            var tds = document.getElementById('DataTable_DrCr').getElementsByTagName('td');
+            var sum = 0;
+            for (var i = 0; i < tds.length; i++) {
+                if (tds[i].className == 'Total_amt') {
+                    sum += isNaN(tds[i].innerHTML) ? 0 : parseInt(tds[i].innerHTML);
+                }
+            }            
+            $("#Total_amt").val(sum);
+
+        }
