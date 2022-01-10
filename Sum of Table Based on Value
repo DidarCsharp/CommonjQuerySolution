@@ -1,0 +1,44 @@
+<table id="table">
+        <tr>
+            <th >Status</th>
+            <th >AMOUNT</th>
+        </tr>
+            <tr>
+                <td >Paid</td>
+                <td class="count-me">5000</td>
+            </tr>
+            <tr>
+                <td >Paid</td>
+                <td class="count-me"> 5000</td>
+            </tr>
+            <tr>
+                <td >Unpaid</td>
+                <td class="count-me">5000</td>
+            </tr>
+             <tr>
+                <td >Unpaid</td>
+                <td class="count-me">5000</td>
+            </tr>
+             <tr>
+                <td >Paid</td>
+                <td class="count-me">5000</td>
+            </tr>
+        </table>
+        
+        //----------
+        var tds = document.getElementById('table').getElementsByTagName('td');
+var sum = 0;
+var sumPaid = 0;
+var sumUnpaid = 0;
+            
+            for(var i = 0; i < tds.length; i ++) {
+                if(tds[i].className == 'count-me') {
+                    sumPaid += tds[i-1].innerHTML == 'Paid' ? +tds[i].innerHTML : 0;
+                    sumUnpaid += tds[i-1].innerHTML == 'Unpaid' ? +tds[i].innerHTML : 0;
+                    sum += isNaN(tds[i].innerHTML) ? 0 : parseInt(tds[i].innerHTML);
+                }
+            }
+            document.getElementById('table').innerHTML += '<tr><td>' + sum + '</td><td>total</td></tr>';
+            document.getElementById('table').innerHTML += '<tr><td>' + sumPaid + '</td><td>total paid</td></tr>';     
+            document.getElementById('table').innerHTML += '<tr><td>' + sumUnpaid + '</td><td>total unpaid</td></tr>';
+        
