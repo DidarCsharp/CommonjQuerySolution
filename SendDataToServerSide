@@ -1,0 +1,25 @@
+     var InvTrans_Obj =
+            {
+                Auto_SLNo: $("#Table_Index").val(),
+                Account_Sub_SubCode: $("#_Account_Sub_SubCode option:selected").val(),
+                SubItemCode: $("#_SubItemCode option:selected").val(),
+                SubItemName: $("#_SubItemCode option:selected").text(),
+                Comments: $("#_Comments").val(),
+                Rate_Per_Item: $("#_ClosingPrice").val(),
+                Out_Item: $("#_Quantity").val(),
+                Total_amt: Totalamount,
+            }           
+            $.ajax({
+                type: "Post",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                url: "SalesInvoice_Service.asmx/PostOnEidtDt",
+                data: JSON.stringify({ InvTrans_Obj }),
+                success: function (data) {                   
+                },
+                error: function (xhr, httpStatusMessage, customErrorMessage) {
+                    if (xhr.status === 410) {
+                        Swal.fire('Oops... Have Some Problem', '', 'error');
+                    }
+                }
+            });
