@@ -1,0 +1,4 @@
+  var Day = $('#DueDateQty').val();             
+            var today = moment();          
+            $('#DueDate').datepicker({ format: 'dd/mm/yyyy' });
+            $('#DueDate').val(moment(today).add(Day, 'days').format('DD/MM/YYYY'));
