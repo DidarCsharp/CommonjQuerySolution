@@ -1,0 +1,37 @@
+<div class="row">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <p><b>Please evaluate the following ten criteria: </b></p>
+                                <label for="Website">1.Punctuality:</label>
+                                Did the member have enough punctuality, on time attendance; did he visit all Agent, Retailer and Institution in time; spend more or less time on the task? 
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="col-sm-2">
+                                    <input class="form-check-input" type="checkbox" value="0" id="flexCheckPoor" name="Punctuality" onclick="CheckedUnCheked()"/>
+                                    <label for="Website">Poor</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckfair" name="Punctuality" onclick="CheckedUnCheked()"/>
+                                    <label for="Website">Fair</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-check-input" type="checkbox" value="2" id="flexCheckGood"  name="Punctuality" onclick="CheckedUnCheked()"/>
+                                    <label for="Website">Good</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-check-input" type="checkbox" value="3" id="flexCheckVeryGood" name="Punctuality" onclick="CheckedUnCheked()"/>
+                                    <label for="Website">VeryGood</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="form-check-input" type="checkbox" value="4" id="flexCheckExcellent" name="Punctuality" onclick="CheckedUnCheked()"/>
+                                    <label for="Website">Excellent</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                     //----------- Punctuality Check Box Group --------------//
+    $('input[name="Punctuality"]').on('change', function () {
+        $('input[name="Punctuality"]').not(this).prop('checked', false);
+    });
