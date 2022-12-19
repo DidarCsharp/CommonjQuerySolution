@@ -1,0 +1,9 @@
+ $("#ItemCode").keydown(function (evt) {          
+            if (evt.key === "Tab")
+            {
+                evt.preventDefault();
+                $('#txtAddless').focus();
+                $('#txtAddless').select();    
+            }
+      
+        });
