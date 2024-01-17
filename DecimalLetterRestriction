@@ -1,0 +1,16 @@
+$(document).ready(function () {
+    // Bind the input event to the text box
+    $('.decimalInput').on('input', function () {
+        // Get the input value
+        let inputValue = $(this).val();
+
+        // Allow digits, one dot, and up to two decimal places
+        let regex = /^\d+(\.\d{0,2})?$/;
+
+        // Test the input against the regular expression
+        if (!regex.test(inputValue)) {
+            // If the input doesn't match, remove the last character
+            $(this).val(inputValue.slice(0, -1));
+        }
+    });
+});
