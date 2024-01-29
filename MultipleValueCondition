@@ -1,0 +1,17 @@
+$(document).ready(function() {
+    // Assuming you have some trigger (like a button click) to check the condition
+    $('#yourTriggerElement').on('click', function() {
+        // Get the values of txtBranch1 and cboDepositType1
+        var txtBranch1Value = $('#txtBranch1').val();
+        var cboDepositType1Value = $('#cboDepositType1').val();
+
+        // Check the condition
+        if (txtBranch1Value === '0' && !['4', '5', '6'].includes(cboDepositType1Value)) {
+            // Your program logic here
+            console.log('Condition met! Execute your program logic.');
+        } else {
+            // Optional: Handle the case when the condition is not met
+            console.log('Condition not met.');
+        }
+    });
+});
